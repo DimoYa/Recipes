@@ -4,7 +4,7 @@ function seedSampleData() {
   recipes.length = 0;
   recipes.push({
     id: 1,
-    name: "Spaghetti Aglio e Olio",
+    name: "Cool Spaghetti Aglio e Olio",
     ingredients: "200g spaghetti,4 cloves of garlic,1/4 cup extra virgin olive oil,1/2 teaspoon red pepper flakes,Salt,Freshly ground black pepper,Grated Parmesan cheese,Chopped fresh parsley",
     description: "A classic Italian pasta dish featuring spaghetti tossed in garlic-infused olive oil with a hint of red pepper flakes.",
     complexity: "1",
