@@ -1,0 +1,31 @@
+extends layout.pug
+
+block head
+  - var pageTitle = 'Create Recipe'
+
+block content
+  form(method='POST')
+    table.recipe-entry.form
+      tr.name
+        th Name
+        td
+          input#name(type='text', name='name', value=`${name}`)
+      tr.ingredients
+        th Ingredients
+        td
+          textarea#ingredients(name='ingredients', rows='5')
+            | #{ingredients}
+      tr.description
+        th Description
+        td
+          textarea#description(name='description', rows='5')
+            | #{description}
+      tr.complexity
+        th Complexity
+        td
+          input#complexity(type='number', name='complexity', min='1', max='10', value=`${complexity}`)
+      tr.imageUrl
+        th Image URL
+        td
+          input#imageUrl(type='text', name='imageUrl', value=`${imageUrl}`)
+    button#create(type='submit') Create

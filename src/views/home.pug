@@ -1,0 +1,17 @@
+extends layout.pug
+
+block head
+  - var pageTitle = 'Welcome'
+
+block content
+  section.home-page Recipes: <b>#{recipes.length}</b>
+  div.home-page-icons
+    a(href='/recipes') 
+      span.icon &#x1D315;
+      span View recipes
+    a(href='/recipes/create')
+      span.icon &#10010;
+      span Create new recipe
+    a(href='/recipes/search')
+      span.icon &#8981;
+      span Search recipes
