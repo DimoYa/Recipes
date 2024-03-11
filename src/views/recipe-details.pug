@@ -4,23 +4,25 @@ block head
   - var pageTitle = 'Recipe Details'
 
 block content
-  table(class='recipe-entry' id=`${'recipe' + recipe.id}`)
-    tr.recipeid
-      th ID
-      td #{recipe.id} 
-    tr.name
-      th Name
-      td #{recipe.name} 
-    tr.ingredients
-      th Ingredients
-      td.ingredients #{recipe.ingredients} 
-    tr.description
-      th Description
-      td.description #{recipe.description} 
-    tr.complexity
-      th Complexity
-      td.complexity #{recipe.complexity} 
-    tr.imageUrl
-      th Image
-      td
-        img(src=recipe.imageUrl, alt='Recipe Image')
+  div(class='recipe-details')
+    div(class='recipe-details-section')
+      h2 Name
+      p #{recipe.name} 
+
+    div(class='recipe-details-section')
+      h2 Ingredients
+      ul
+        each ingredient in recipe.ingredients.split(',')
+          li= ingredient.trim()
+
+    div(class='recipe-details-section')
+      h2 Description
+      p #{recipe.description} 
+
+    div(class='recipe-details-section')
+      h2 Complexity
+      p #{recipe.complexity} 
+
+    div(class='recipe-details-section')
+      h2 Image
+      img(src=recipe.imageUrl, alt='Recipe Image', style='max-width: 300px; height: auto;')

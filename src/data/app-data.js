@@ -5,7 +5,7 @@ function seedSampleData() {
   recipes.push({
     id: 1,
     name: "Spaghetti Aglio e Olio",
-    ingredients: "200g spaghetti,\n4 cloves of garlic,\n1/4 cup extra virgin olive oil,\n1/2 teaspoon red pepper flakes,\nSalt,\nFreshly ground black pepper,\nGrated Parmesan cheese,\nChopped fresh parsley",
+    ingredients: "200g spaghetti,4 cloves of garlic,1/4 cup extra virgin olive oil,1/2 teaspoon red pepper flakes,Salt,Freshly ground black pepper,Grated Parmesan cheese,Chopped fresh parsley",
     description: "A classic Italian pasta dish featuring spaghetti tossed in garlic-infused olive oil with a hint of red pepper flakes.",
     complexity: "1",
     imageUrl: "https://theplantbasedschool.com/wp-content/uploads/2020/12/Spaghetti-4-1157x1536.jpg"
@@ -13,7 +13,7 @@ function seedSampleData() {
   recipes.push({
     id: 2,
     name: "Chicken Parmesan",
-    ingredients: "2 boneless, skinless chicken breasts,\n1 cup breadcrumbs,\n1/2 cup grated Parmesan cheese,\n1 egg,\n1 cup marinara sauce,\n1 cup shredded mozzarella cheese,\nSalt,\nFreshly ground black pepper,\nChopped fresh basil",
+    ingredients: "2 boneless, skinless chicken breasts,1 cup breadcrumbs,1/2 cup grated Parmesan cheese,1 egg,1 cup marinara sauce,1 cup shredded mozzarella cheese,Salt,Freshly ground black pepper,Chopped fresh basil",
     description: "A classic Italian-American dish featuring breaded chicken breasts topped with marinara sauce and melted mozzarella cheese.",
     complexity: "3",
     imageUrl: "https://tastesbetterfromscratch.com/wp-content/uploads/2023/03/Chicken-Parmesan-1.jpg"
@@ -21,7 +21,7 @@ function seedSampleData() {
   recipes.push({
     id: 3,
     name: "Caprese Salad",
-    ingredients: "2 large tomatoes,\n1 ball fresh mozzarella cheese,\n1/4 cup fresh basil leaves,\n2 tablespoons extra virgin olive oil,\n1 tablespoon balsamic vinegar,\nSalt,\nFreshly ground black pepper",
+    ingredients: "2 large tomatoes,1 ball fresh mozzarella cheese,1/4 cup fresh basil leaves,2 tablespoons extra virgin olive oil,1 tablespoon balsamic vinegar,Salt,Freshly ground black pepper",
     description: "A refreshing Italian salad featuring ripe tomatoes, creamy mozzarella, and fresh basil, drizzled with olive oil and balsamic vinegar.",
     complexity: "1",
     imageUrl: "https://whatsgabycooking.com/wp-content/uploads/2023/06/Dinner-Party-__-Traditional-Caprese-1.jpg"
