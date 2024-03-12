@@ -1,0 +1,29 @@
+<h1>Create</h1>
+<div class="form">
+  <form method="POST">
+    <table class="recipe-entry form">
+      <tr class="name">
+        <th>Name</th>
+        <td><input type="text" id="name" name="name" value="{{name}}"></td>
+      </tr>
+      <tr class="ingredients">
+        <th>Ingredients</th>
+        <td><textarea id="ingredients" name="ingredients" rows="5">{{ingredients}}</textarea></td>
+      </tr>
+      <tr class="description">
+        <th>Description</th>
+        <td><textarea id="description" name="description" rows="5">{{description}}</textarea></td>
+      </tr>
+      <tr class="complexity">
+        <th>Complexity</th>
+        <td><input type="number" id="complexity" name="complexity" min="1" max="10" value="{{complexity}}"></td>
+      </tr>
+      <tr class="imageUrl">
+        <th>Image URL</th>
+        <td><input type="text" id="imageUrl" name="imageUrl" value="{{imageUrl}}"></td>
+      </tr>
+    </table>
+    <button type="submit" id="create">Create</button>
+  </form>
+  </form>
+</div>

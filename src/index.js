@@ -1,27 +1,55 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({extended:true}));
+const bodyParser = require("body-parser");
+const exphbs = require("express-handlebars");
+const path = require("path");
+const { home } = require("./controllers/home");
+const { notFound } = require("./controllers/notFound");
+const { recipes } = require("./controllers/recipe");
+const { search, searchByKeyword, getResults } = require("./controllers/search");
+const create = require("./controllers/create");
+
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static('public'))
-app.set('view engine', 'pug');
+app.use(express.static("public"));
 
 const data = require("./data/app-data");
 data.seedSampleData();
 
 const mvcController = require("./controllers/mvc-controller");
-mvcController.setup(app, data);
+const setupController = mvcController.setup; // Import the setup function
 
-let port = process.argv[2];
-if (!port) port = process.env['PORT'];
-if (!port) port = 8080;
+start();
 
-app.listen(port, () => {
-  console.log(`App started. Listening at http://localhost:${port}`);
-})
-.on('error', function(err) {
-  if (err.errno === 'EADDRINUSE')
-    console.error(`Port ${port} busy.`);
-  else 
-    throw err;
-});
+async function start() {
+  app.use(express.urlencoded({ extended: true }));
+  app.use("/static", express.static("static"));
+
+  app.engine(
+    "hbs",
+    exphbs.create({
+      extname: ".hbs",
+      layoutsDir: path.join(__dirname, "views"),
+      defaultLayout: "main"
+    }).engine
+  );
+
+  app.set("view engine", "hbs");
+
+  setupController(app, data);
+
+  app.get("/", home);
+  app.get("/recipes", recipes);
+  app.get("/recipes/search", searchByKeyword);
+  app.get("/recipes/find/:keyword", getResults);
+
+
+  app
+    .route("/create")
+    .get(create.get)
+    .post(create.post);
+
+  app.all("*", notFound);
+
+  app.listen(3000, () => console.log("App started"));
+}

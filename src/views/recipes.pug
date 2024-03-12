@@ -1,9 +1,0 @@
-extends layout.pug
-
-block head
-  - var pageTitle = 'View Recipes'
-
-block content
-  if recipes.length == 0
-    p Recipe book is empty.
-  include render-recipes

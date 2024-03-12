@@ -1,0 +1,30 @@
+<div class="recipe-details">
+  <div class="recipe-details-section">
+    <h2>Name</h2>
+    <p>{{recipe.name}}</p>
+  </div>
+
+  <div class="recipe-details-section">
+    <h2>Ingredients</h2>
+    <ul>
+      {{#each (split recipe.ingredients ',')}}
+      <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="recipe-details-section">
+    <h2>Description</h2>
+    <p>{{recipe.description}}</p>
+  </div>
+
+  <div class="recipe-details-section">
+    <h2>Complexity</h2>
+    <p>{{recipe.complexity}}</p>
+  </div>
+
+  <div class="recipe-details-section">
+    <h2>Image</h2>
+    <img src="{{recipe.imageUrl}}" alt="Recipe Image">
+  </div>
+</div>
