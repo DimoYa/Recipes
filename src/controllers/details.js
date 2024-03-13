@@ -1,25 +1,11 @@
+const data = require("../data/app-data");
+
 module.exports = {
-    /**
-     *
-     * @param {IncomingMessage} req
-     * @param {ServerResponse} res
-     */
-    async get(req, res) {
+    async details(req, res) {
         const id = req.params.id;
-        const data = await req.storage.getById(id);
 
-
-        let recipe = data.findRecipeById(req.params.id);
-        if (recipe.errMsg) {
-            model = {
-                errText: 'recipe Not Found',
-                errDetails: recipe.errMsg
-            };
-            res.render('error', model);
-        }
-        else {
-            let model = { recipe };
-            res.render('recipe-details', model);
-        }
+        const recipe = data.findRecipeById(id);
+        recipe.ingredientsArray = recipe.ingredients.split(',');
+        res.render('recipe-details', { title: 'Recipe details', recipe });
     },
 };

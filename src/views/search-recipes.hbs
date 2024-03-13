@@ -1,25 +1,25 @@
-<h1>{{name}}</h1>
-{{#if keyword}}
-  <h1>Recipes Matching Keyword "{{keyword}}"</h1>
-  {{#if recipes}}
-    <div id="searchResult">{{recipes.length}} recipes found.</div>
-    <br>
-    {{#each recipes}}
-      {{> recipes-info}}
-      <br>
-    {{/each}}
-  {{else}}
-    <div id="searchResult">No recipes found.</div>
-    <br>
-  {{/if}}
-{{/if}}
+{{#if model.keyword}}
+<h1>Recipes Matching Keyword "{{model.keyword}}"</h1>
+{{#if model.recipes}}
+<div id="searchResult">{{model.recipes.length}} recipes found.</div>
+<br>
+<div class="recipes-grid">
+  {{#each model.recipes}}
+  {{> recipes-info}}
+  {{/each}}
+</div>
+{{else}}
+<div id="searchResult">No recipes found.</div>
 
+{{/if}}
+{{/if}}
+<br>
 <form method="GET">
   <table class="recipe-entry form">
     <tr class="name">
       <th>Keyword</th>
       <td>
-        <input id="keyword" type="text" name="keyword" value="{{keyword}}">
+        <input id="keyword" type="text" name="keyword" value="{{model.keyword}}">
       </td>
     </tr>
   </table>

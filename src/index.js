@@ -6,7 +6,8 @@ const path = require("path");
 const { home } = require("./controllers/home");
 const { notFound } = require("./controllers/notFound");
 const { recipes } = require("./controllers/recipe");
-const { search, searchByKeyword, getResults } = require("./controllers/search");
+const { details } = require("./controllers/details");
+const { searchByKeyword, getResults } = require("./controllers/search");
 const create = require("./controllers/create");
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,9 +16,6 @@ app.use(express.static("public"));
 
 const data = require("./data/app-data");
 data.seedSampleData();
-
-const mvcController = require("./controllers/mvc-controller");
-const setupController = mvcController.setup; // Import the setup function
 
 start();
 
@@ -33,16 +31,12 @@ async function start() {
       defaultLayout: "main"
     }).engine
   );
-
   app.set("view engine", "hbs");
-
-  setupController(app, data);
-
   app.get("/", home);
   app.get("/recipes", recipes);
+  app.get("/recipes/details/:id", details);
   app.get("/recipes/search", searchByKeyword);
   app.get("/recipes/find/:keyword", getResults);
-
 
   app
     .route("/create")
@@ -51,5 +45,5 @@ async function start() {
 
   app.all("*", notFound);
 
-  app.listen(3000, () => console.log("App started"));
+  app.listen(8080, () => console.log("App started"));
 }

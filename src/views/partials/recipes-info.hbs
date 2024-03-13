@@ -1,28 +1,26 @@
-<div class="recipes-grid">
-  <a href="/recipes/{{this.id}}">
-    <table class="recipe-entry">
-      <tr class="name">
-        <th>Name</th>
-        <td>{{this.name}}</td>
-      </tr>
-      <tr class="ingredients">
-        <th>Ingredients</th>
-        <td class="ingredients">{{this.ingredients}}</td>
-      </tr>
-      <tr class="description">
-        <th>Description</th>
-        <td class="description">{{this.description}}</td>
-      </tr>
-      <tr class="complexity">
-        <th>Complexity</th>
-        <td class="complexity">{{this.complexity}}</td>
-      </tr>
-      <tr class="imageUrl">
-        <th>Image</th>
-        <td>
-          <img src="{{this.imageUrl}}" alt="Recipe Image">
-        </td>
-      </tr>
-    </table>
-  </a>
-</div>
+<a href="/recipes/details/{{this.id}}">
+  <table class="recipe-entry">
+    <tr class="name">
+      <th>Name</th>
+      <td>{{this.name}}</td>
+    </tr>
+    <tr class="ingredients">
+      <th>Ingredients</th>
+      <td class="ingredients">{{this.ingredients}}</td>
+    </tr>
+    <tr class="description">
+      <th>Description</th>
+      <td class="description">{{this.description}}</td>
+    </tr>
+    <tr class="complexity">
+      <th>Complexity</th>
+      <td class="complexity">{{this.complexity}}</td>
+    </tr>
+    <tr class="imageUrl">
+      <th>Image</th>
+      <td>
+        <img src="{{this.imageUrl}}" alt="Recipe Image">
+      </td>
+    </tr>
+  </table>
+</a>

@@ -1,11 +1,6 @@
 const data = require("../data/app-data");
 
 module.exports = {
-    /**
-     *
-     * @param {IncomingMessage} req
-     * @param {ServerResponse} res
-     */
     get(req, res) {
         res.render('create', { title: 'Create recipe' });
     },
@@ -15,11 +10,14 @@ module.exports = {
             req.body.ingredients, req.body.description, req.body.imageUrl);
         if (result.errMsg) {
             let model = {
-                name: req.body.name, complexity: req.body.complexity,
-                ingredients: req.body.ingredients, description: req.body.description, imageUrl: req.body.imageUrl,
+                name: req.body.name,
+                complexity: req.body.complexity,
+                ingredients: req.body.ingredients,
+                description: req.body.description,
+                imageUrl: req.body.imageUrl,
                 errMsg: result.errMsg
             };
-            return res.render('create', model);
+            return res.render('create', { title: 'Create recipe', ...model });
         } else {
             res.redirect('/recipes');
         }

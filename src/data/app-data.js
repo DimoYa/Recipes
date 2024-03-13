@@ -53,6 +53,8 @@ function findRecipesByKeyword(keyword) {
 function addRecipe(name, complexity, ingredients, description, imageUrl) {
   if (isParamEmpty(name))
     return { errMsg: "Name cannot be empty!" };
+    if (isParamEmpty(ingredients))
+    return { errMsg: "ingredients cannot be empty!" };
   if (isParamEmpty(description))
     return { errMsg: "Description cannot be empty!" };
   if (isParamEmpty(complexity))

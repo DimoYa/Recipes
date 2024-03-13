@@ -1,4 +1,4 @@
-<div class="recipe-details">
+{{!-- <div class="recipe-details">
   <div class="recipe-details-section">
     <h2>Name</h2>
     <p>{{recipe.name}}</p>
@@ -7,7 +7,7 @@
   <div class="recipe-details-section">
     <h2>Ingredients</h2>
     <ul>
-      {{#each (split recipe.ingredients ',')}}
+      {{#each recipe.ingredientsArray}}
       <li>{{this}}</li>
       {{/each}}
     </ul>
@@ -27,4 +27,35 @@
     <h2>Image</h2>
     <img src="{{recipe.imageUrl}}" alt="Recipe Image">
   </div>
-</div>
+</div> --}}
+
+<table class="recipe-details">
+  <tr class="name">
+    <th>Name</th>
+    <td>{{recipe.name}}</td>
+  </tr>
+  <tr class="ingredients">
+    <th>Ingredients</th>
+    <td class="ingredients">
+      <ul>
+        {{#each recipe.ingredientsArray}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </td>
+  </tr>
+  <tr class="description">
+    <th>Description</th>
+    <td class="description">{{recipe.description}}</td>
+  </tr>
+  <tr class="complexity">
+    <th>Complexity</th>
+    <td class="complexity">{{recipe.complexity}}</td>
+  </tr>
+  <tr class="imageUrl">
+    <th>Image</th>
+    <td>
+      <img src="{{recipe.imageUrl}}" alt="Recipe Image">
+    </td>
+  </tr>
+</table>

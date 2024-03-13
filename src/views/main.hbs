@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{pageTitle}} &ndash; Recipe Book</title>
+    <title>{{title}} &ndash; Recipe Book</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
 
@@ -13,7 +13,7 @@
         <a href="/">
             <img src="/assets/logo.png" alt="Logo" style="width: 50px; height: 50px;">
         </a>
-        <h1>{{pageTitle}}</h1>
+        <h1>{{title}}</h1>
     </header>
 
     <aside>
@@ -26,11 +26,14 @@
     </aside>
 
     <main>
+        {{#if errMsg}}
+        <div class='err'>Error: {{errMsg}}</div>
+        {{/if}}
         {{{body}}}
     </main>
 
     <footer>
-        <div>© {{currentYear}}</div>
+        <div class="footer-wrapper">© All rights reserved</div>
     </footer>
 </body>
 

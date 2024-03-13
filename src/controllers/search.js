@@ -14,7 +14,6 @@ module.exports = {
 
   async getResults(req, res) {
     let recipes = data.findRecipeByKeyword(req.params.keyword);
-    let model = { recipes };
-    res.render('recipe-list', model);
+    res.render('recipe-list', recipes);
   },
 };
