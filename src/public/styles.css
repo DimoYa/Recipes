@@ -308,14 +308,22 @@ div.not-found {
       "footer footer";
   }
 
+  aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
   aside ul {
     position: static;
     transform: translate(0%, 0%);
     text-align: center;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
+  }
+
+  aside ul li {
+   margin-right: 20px;
   }
 
   div.recipes-grid {
