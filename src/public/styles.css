@@ -248,12 +248,14 @@ form button {
 }
 
 .err {
-  background: red;
-  color: white;
+  background-color: #bc204b;
+  color: #fff;
+  justify-content: center;
+  text-align: center;
   margin: 10px auto;
   padding: 10px;
   border-radius: 3px;
-  width: 75%;
+  width: 50%;
 }
 
 .complexity select {
@@ -313,7 +315,7 @@ div.not-found {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%; 
+    height: 100%;
   }
 
   div.recipes-grid {
