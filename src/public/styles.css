@@ -293,6 +293,7 @@ div.not-found {
     grid-template-columns: repeat(1, 1fr);
     gap: 5px;
   }
+
 }
 
 @media (max-width: 800px) {
@@ -303,6 +304,16 @@ div.not-found {
       "aside aside"
       "main main"
       "footer footer";
+  }
+
+  aside ul {
+    position: static;
+    transform: translate(0%, 0%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%; 
   }
 
   div.recipes-grid {
